@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,19 @@ namespace DAL_Acceso
                 mensaje = "Error: " + r.Message;
             }
             return conAbierta;
+        }
+
+        public void CerrarConexion(SqlConnection conAbierta)
+        {
+            if (conAbierta != null) //Si la conexion es diferente de null
+            {
+                if (conAbierta.State == ConnectionState.Open) //Si el estado de la conexion es igual a abierta
+                {
+                    conAbierta.Close();//Cierra la conexion
+                    conAbierta.Dispose();//Se destruye
+                }
+            }
+
         }
     }
 }
