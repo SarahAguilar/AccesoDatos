@@ -1,16 +1,15 @@
-﻿using System;
+﻿using LogicaNegocios;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LogicaNegocios;
-using System.Configuration;
 
 namespace AccesoDatosCOVID
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         LN bl = null;
         //public LN bl;
@@ -27,18 +26,18 @@ namespace AccesoDatosCOVID
 
                 bl = (LN)Session["bl"];
             }
-            mostrarProfs();
+            mostrarAlum();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
-        public void mostrarProfs()
+        public void mostrarAlum()
         {
             string msj = "";
-            GridView1.DataSource = bl.VerProfesor(ref msj);
+            GridView1.DataSource = bl.VerAlumnos(ref msj);
             GridView1.DataBind();
         }
     }

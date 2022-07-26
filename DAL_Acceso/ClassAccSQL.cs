@@ -13,11 +13,11 @@ namespace DAL_Acceso
 
         private string conexion;
 
-        public ClassAccSQL(string cadcon)
+        public ClassAccSQL(string cadcon)//Constructor
         {
             conexion = cadcon;
         }
-        public SqlConnection AbrirConexion(ref string mensaje) 
+        public SqlConnection AbrirConexion(ref string mensaje)
         {
             SqlConnection conAbierta = new SqlConnection(); //Conexion a la base de datos Covid 
             conAbierta.ConnectionString = conexion;
@@ -48,46 +48,48 @@ namespace DAL_Acceso
 
         }
 
-        public DataSet BuscaProfesor(string querySql, SqlConnection conAbierta, ref string mensaje, List<SqlParameter> parametros)
+        public DataSet ConsultaDS(string querySql, SqlConnection conAbierta, ref string mensaje, List<SqlParameter> parametros)
         {
-            SqlCommand carrito = null;
+            SqlCommand instruccion = null; //Crea el comando
             SqlDataAdapter trailer = null;
-            DataSet DS_salida = new DataSet();
+            DataSet dataset = new DataSet();
 
             if (conAbierta == null)
             {
-                mensaje = "No hay conexion a la BD";
-                DS_salida = null;
+                mensaje = "Error al conectarse a la BD";
+                dataset = null;
             }
             else
             {
-                carrito = new SqlCommand();
-                carrito.CommandText = querySql;
-                carrito.Connection = conAbierta;
+                instruccion = new SqlCommand(); //instancia el comando
+                instruccion.CommandText = querySql;
+                instruccion.Connection = conAbierta;
 
                 //Agregar posibles parametros
                 foreach (SqlParameter p in parametros)
                 {
-                    carrito.Parameters.Add(p); //Al carrito le aqregamos los parametros
+                    instruccion.Parameters.Add(p); //Al carrito le aqregamos los parametros
                 }
 
-                trailer = new SqlDataAdapter();
-                trailer.SelectCommand = carrito;
+                trailer = new SqlDataAdapter(); //Instancia
+                trailer.SelectCommand = instruccion;
 
                 try
                 {
-                    trailer.Fill(DS_salida, "Consulta1");
+                    trailer.Fill(dataset, "Consulta1"); //Agregamos al dataset y asignamos un nombre
                     mensaje = "Consulta Correcta en DataSet";
                 }
                 catch (Exception a)
                 {
-                    DS_salida = null;
+                    dataset = null;
                     mensaje = "Error!" + a.Message;
                 }
                 conAbierta.Close();
                 conAbierta.Dispose();
             }
-            return DS_salida;
+            return dataset;
+
         }
+
     }
 }
