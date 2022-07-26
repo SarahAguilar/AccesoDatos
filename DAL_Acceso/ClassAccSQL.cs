@@ -47,5 +47,47 @@ namespace DAL_Acceso
             }
 
         }
+
+        public DataSet BuscaProfesor(string querySql, SqlConnection conAbierta, ref string mensaje, List<SqlParameter> parametros)
+        {
+            SqlCommand carrito = null;
+            SqlDataAdapter trailer = null;
+            DataSet DS_salida = new DataSet();
+
+            if (conAbierta == null)
+            {
+                mensaje = "No hay conexion a la BD";
+                DS_salida = null;
+            }
+            else
+            {
+                carrito = new SqlCommand();
+                carrito.CommandText = querySql;
+                carrito.Connection = conAbierta;
+
+                //Agregar posibles parametros
+                foreach (SqlParameter p in parametros)
+                {
+                    carrito.Parameters.Add(p); //Al carrito le aqregamos los parametros
+                }
+
+                trailer = new SqlDataAdapter();
+                trailer.SelectCommand = carrito;
+
+                try
+                {
+                    trailer.Fill(DS_salida, "Consulta1");
+                    mensaje = "Consulta Correcta en DataSet";
+                }
+                catch (Exception a)
+                {
+                    DS_salida = null;
+                    mensaje = "Error!" + a.Message;
+                }
+                conAbierta.Close();
+                conAbierta.Dispose();
+            }
+            return DS_salida;
+        }
     }
 }
