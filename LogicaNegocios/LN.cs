@@ -53,5 +53,19 @@ namespace LogicaNegocios
             }
             return salida;
         }
+
+        public DataTable InfoProfe(ref string msj, string id)
+        {
+            string query = "SELECT * FROM PositivoProfe where F_Profe = " + id;
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaP);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
     }
 }

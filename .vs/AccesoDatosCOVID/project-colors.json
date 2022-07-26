@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3e66029e-82d0-4192-81bc-0fff8908aa9c": {
+      "ProjectGuid": "3e66029e-82d0-4192-81bc-0fff8908aa9c",
+      "DisplayName": "WebPresentacion",
+      "ColorIndex": 0
+    },
+    "4ab03adc-aa5c-492f-85e4-835b2b66a50a": {
+      "ProjectGuid": "4ab03adc-aa5c-492f-85e4-835b2b66a50a",
+      "DisplayName": "DAL_Acceso",
+      "ColorIndex": 1
+    },
+    "c650cdb6-b67e-4c1e-8e4a-6e31e0bf06d1": {
+      "ProjectGuid": "c650cdb6-b67e-4c1e-8e4a-6e31e0bf06d1",
+      "DisplayName": "LogicaNegocios",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
