@@ -42,14 +42,21 @@
                      <SortedDescendingCellStyle BackColor="#FFFDF8" />
                      <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                  </asp:GridView>
-            </div>
+            </div> <%--fin div col-10 --%>
             <div class="col-2">
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar todos los profesores" class="btn btn-info"/>
-            </div>
-           
-            
+               <br /><br />
+                Programa educativo:
+               <select class="form-select" id="Select1" name="D1">
+                    <option selected>Selecciona uno... </option>
+                </select><br />
+                Cuatrimestre:<br />
+                <select class="form-select" id="Select2" name="D2">
+                    <option selected>Selecciona uno... </option>
+                </select><br />
+                 <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar profesores" class="btn btn-info"/>
+            </div><%--fin div col-2 --%>            
 
-        </div>
+        </div> <%--fin div row --%>
     </form><%--fin del form con container--%>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
