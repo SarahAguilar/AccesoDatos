@@ -91,5 +91,38 @@ namespace DAL_Acceso
 
         }
 
+        public bool Modificar(SqlConnection conAbierta, string sentenciaSQL, ref string msj, List<SqlParameter> lista)
+        {
+            SqlCommand carrito = null; //Crea el comando
+            Boolean salida = false;
+            AbrirConexion(ref msj);
+            if (conAbierta != null)
+            {
+                carrito = new SqlCommand();
+                carrito.CommandText = sentenciaSQL;
+                carrito.Connection = conAbierta;
+                foreach (SqlParameter temp in lista)
+                {
+                    carrito.Parameters.Add(temp);
+                }
+                try
+                {
+                    carrito.ExecuteNonQuery(); //Realiza cambios de la base
+                    salida = true;
+                   // msj = "Modificación correcta";
+                }
+                catch (Exception e)
+                {
+                    salida = false;
+                   // msj = "Error" + e.Message;
+                }
+            }
+            else
+            {
+                salida = false;
+            }
+            return salida;
+        }
+
     }
 }

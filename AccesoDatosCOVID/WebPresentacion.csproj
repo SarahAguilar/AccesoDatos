@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
+    <Content Include="WebFormAlumnos.aspx" />
     <Content Include="WebFormProfes.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +88,13 @@
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormAlumnos.aspx.cs">
+      <DependentUpon>WebFormAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormAlumnos.aspx.designer.cs">
+      <DependentUpon>WebFormAlumnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormProfes.aspx.cs">
       <DependentUpon>WebFormProfes.aspx</DependentUpon>
@@ -110,6 +118,9 @@
       <Project>{c650cdb6-b67e-4c1e-8e4a-6e31e0bf06d1}</Project>
       <Name>LogicaNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imgs\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

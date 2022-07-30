@@ -40,5 +40,11 @@ namespace AccesoDatosCOVID
             GridView1.DataSource = bl.VerAlumnos(ref msj);
             GridView1.DataBind();
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["ID_Alumno"] = GridView1.SelectedRow.Cells[1].Text; //Se guarda el id del profe en una variable de sesion
+            Response.Redirect("WebFormAlumnos.aspx"); //Redireccionamos
+        }
     }
 }

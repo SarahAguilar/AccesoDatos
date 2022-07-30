@@ -7,3 +7,12 @@ C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCO
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCOVID\LogicaNegocios\obj\Debug\LogicaNegocios.csproj.CopyComplete
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCOVID\LogicaNegocios\obj\Debug\LogicaNegocios.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCOVID\LogicaNegocios\obj\Debug\LogicaNegocios.pdb
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\bin\Debug\LogicaNegocios.dll
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\bin\Debug\LogicaNegocios.pdb
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\bin\Debug\DAL_Acceso.dll
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\bin\Debug\DAL_Acceso.pdb
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\obj\Debug\LogicaNegocios.csproj.AssemblyReference.cache
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\obj\Debug\LogicaNegocios.csproj.CoreCompileInputs.cache
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\obj\Debug\LogicaNegocios.csproj.CopyComplete
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\obj\Debug\LogicaNegocios.dll
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\LogicaNegocios\obj\Debug\LogicaNegocios.pdb
