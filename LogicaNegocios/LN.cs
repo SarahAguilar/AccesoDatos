@@ -56,16 +56,17 @@ namespace LogicaNegocios
 
         public DataTable InfoProfe(ref string msj, string id)
         {
-            string query = "SELECT Id_PosProfe 'ID', FechaConfirmado,Comprobacion, Riesgo, Doc_Prueba, PeriodoIncapacidad, Dias_Incapacidad, Doc_Incapacidad FROM PositivoProfe where F_Profe = " + id;
-            //string query = "SELECT  pos.Id_posProfe, pos.FechaConfirmado, pos.Comprobacion, pos.Antecedentes," +
-            //    "pos.Riesgo, pos.NumContaio, pos.Doc_Prueba, pos.PeriodoIncapacidad, " +
-            //    "pos.Dias_Incapacidad, pos.Doc_Incapacidad," +
-            //    "seg.Form_Comunica, seg.Reporte, med.Nombre, med.Telefono, med.especialidad" +
-            //    "FROM PositivoProfe " +
-            //    "INNER JOIN SeguimientoPRO seg" +
-            //    "ON pos.Id_posProfe = seg.F_positivoProfe " +
-            //    "INNER jOIN Medico med" +
-            //    "ON seg.F_medico = med.ID_Dr where F_Profe = " + id;
+            //string query = "SELECT Id_PosProfe 'ID', FechaConfirmado,Comprobacion, Riesgo, Doc_Prueba, PeriodoIncapacidad, Dias_Incapacidad, Doc_Incapacidad FROM PositivoProfe where F_Profe = " + id;
+            string query = "SELECT  pos.Id_posProfe 'ID', pos.FechaConfirmado 'Fecha', pos.Comprobacion, "
+                + "pos.Antecedentes, pos.Riesgo, pos.NumContaio 'Contagios', pos.Doc_Prueba 'Documento Prueba', "
+                + "pos.PeriodoIncapacidad 'N° Incapacidad', pos.Dias_Incapacidad 'N° días', pos.Doc_Incapacidad 'Documento Incapacidad', "
+                + "seg.Form_Comunica 'Comunica', seg.Reporte, med.Nombre 'Medico', med.Telefono 'Tel medico', med.especialidad 'Especialidad' "
+                + "FROM PositivoProfe pos "
+                + "INNER JOIN SeguimientoPRO seg "
+                + "ON pos.Id_posProfe = seg.F_positivoProfe "
+                + "INNER JOIN Medico med "
+                + "ON seg.F_medico = med.ID_Dr "
+                + " where F_Profe = " + id;
             DataTable salida = null;
             DataSet ds = null;
             List<SqlParameter> listaP = new List<SqlParameter>();
@@ -132,5 +133,26 @@ namespace LogicaNegocios
             });
             acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
         }
+
+        public Boolean BorrarSeguimientoPro(string id)
+        {
+            string query = "DELETE FROM SeguimientoPRO where F_positivoProfe = " + id;
+            string msj = "";
+            Boolean salida = false;
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            salida = acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+            return salida;
+        }
+
+        public Boolean BorrarPositivoProfe(string id)
+        {
+            string query = "DELETE FROM PositivoProfe where Id_posProfe = " + id;
+            string msj = "";
+            Boolean salida = false;
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            salida = acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+            return salida;
+        }
+
     }
 }
