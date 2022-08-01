@@ -28,6 +28,8 @@ namespace AccesoDatosCOVID
                 bl = (LN)Session["bl"];
             }
             mostrarProfs();
+            mostrarPE(ref DropDownList1);
+            mostrarCU(ref DropDownList2);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -40,6 +42,28 @@ namespace AccesoDatosCOVID
             string msj = "";
             GridView1.DataSource = bl.VerProfesor(ref msj);
             GridView1.DataBind();
+        }
+
+        //Mostrar selct Carrera
+        public void mostrarPE(ref DropDownList dropDownList)
+        {
+
+            string msj = "";
+            DropDownList1.DataSource = bl.SelectProgEdu(ref msj);
+            DropDownList1.DataTextField = "ProgramaEd";
+            DropDownList1.DataValueField = "Id_pe";
+            DropDownList1.DataBind();
+
+        }
+        public void mostrarCU(ref DropDownList dropDownList)
+        {
+
+            string msj = "";
+            DropDownList2.DataSource = bl.SelectCuatri(ref msj);
+            DropDownList2.DataTextField = "Periodo";
+            DropDownList2.DataValueField = "id_Cuatrimestre";
+            DropDownList2.DataBind();
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

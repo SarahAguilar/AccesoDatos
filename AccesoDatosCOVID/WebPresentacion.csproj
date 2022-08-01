@@ -71,6 +71,7 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebFormAlumnos.aspx" />
+    <Content Include="WebFormEditarProfes.aspx" />
     <Content Include="WebFormProfes.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="WebFormAlumnos.aspx.designer.cs">
       <DependentUpon>WebFormAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEditarProfes.aspx.cs">
+      <DependentUpon>WebFormEditarProfes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditarProfes.aspx.designer.cs">
+      <DependentUpon>WebFormEditarProfes.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormProfes.aspx.cs">
       <DependentUpon>WebFormProfes.aspx</DependentUpon>
