@@ -10,3 +10,9 @@ C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\Acceso
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.csproj.CoreCompileInputs.cache
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.pdb
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\bin\Debug\DAL_Acceso.dll
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\bin\Debug\DAL_Acceso.pdb
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.csprojAssemblyReference.cache
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.dll
+C:\Users\pc\Desktop\Pro2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.pdb

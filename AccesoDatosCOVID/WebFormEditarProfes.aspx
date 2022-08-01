@@ -169,7 +169,7 @@
             <div class="col-2">
             </div>
             <div class="col-8">
-                <asp:Button ID="ButtonAgregar" runat="server" Text="E D I T A R" class="btn btn-success col-sm-12"/>
+                <asp:Button ID="ButtonAgregar" runat="server" Text="E D I T A R" class="btn btn-success col-sm-12" OnClick="ButtonAgregar_Click"/>
             </div>
             <div class="col-2">
             </div>

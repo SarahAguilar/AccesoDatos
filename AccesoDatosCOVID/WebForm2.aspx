@@ -46,17 +46,18 @@
            <div class="col-2">
                <br /><br />
                 Programa educativo:
-               <select class="form-select" id="Select1" name="D1">
-                    <option selected>Selecciona uno... </option>
-                </select><br />
+               <br />
+               <asp:DropDownList ID="DropDownList1" runat="server">
+               </asp:DropDownList>
+               <br />
                 Cuatrimestre:<br />
-                <select class="form-select" id="Select2" name="D2">
-                    <option selected>Selecciona uno... </option>
-                </select><br />
+                <asp:DropDownList ID="DropDownList2" runat="server">
+               </asp:DropDownList>
+               <br />
                Grupo:<br />
-                <select class="form-select" id="Select3" name="D3">
-                    <option selected>Selecciona uno... </option>
-                </select><br />
+                <asp:DropDownList ID="DropDownList3" runat="server">
+               </asp:DropDownList>
+               <br />
                  <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar Alumnos" class="btn btn-info"/>
             </div><%--fin div col-2 --%>
            

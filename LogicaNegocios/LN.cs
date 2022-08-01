@@ -134,6 +134,48 @@ namespace LogicaNegocios
             acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
         }
 
+        public DataTable SelectProgEdu(ref string msj)
+        {
+            string query = "SELECT * FROM ProgramaEducativo;";//consulta en la tabla programa educativo
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaPro = new List<SqlParameter>();
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaPro);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
+
+        public DataTable SelectCuatri(ref string msj)
+        {
+            string query = "SELECT * FROM Cuatrimestre;";//consulta en la tabla cuatrimestre
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaPro = new List<SqlParameter>();
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaPro);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
+
+        public DataTable SelectGru(ref string msj)
+        {
+            string query = "SELECT * FROM Grupo;";//consulta en la tabla grupo
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaPro = new List<SqlParameter>();
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaPro);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
+
         public Boolean BorrarSeguimientoPro(string id)
         {
             string query = "DELETE FROM SeguimientoPRO where F_positivoProfe = " + id;
