@@ -49,12 +49,14 @@ namespace AccesoDatosCOVID
         {
 
             string msj = "";
-            DropDownList1.DataSource = bl.SelectProgEdu(ref msj);
+            DropDownList1.DataSource = bl.SelectProgEdu2(ref msj);
             DropDownList1.DataTextField = "ProgramaEd";
             DropDownList1.DataValueField = "Id_pe";
             DropDownList1.DataBind();
 
         }
+
+
         public void mostrarCU(ref DropDownList dropDownList)
         {
 
