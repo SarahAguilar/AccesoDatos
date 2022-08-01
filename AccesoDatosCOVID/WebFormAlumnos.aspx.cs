@@ -37,6 +37,17 @@ namespace AccesoDatosCOVID
             GridView1.DataBind();
         }
 
-        
+        protected void ButtonEditar_Click(object sender, EventArgs e)
+        {
+            form1.Visible = true;
+        }
+
+        public void NoVisibles()
+        {
+
+            form1.Visible = false;
+
+        }
     }
+       
 }

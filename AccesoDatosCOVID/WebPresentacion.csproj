@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LogicaNegocios, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LogicaNegocios\bin\Debug\LogicaNegocios.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,6 +75,7 @@
     <Content Include="WebForm1.aspx" />
     <Content Include="WebForm2.aspx" />
     <Content Include="WebFormAlumnos.aspx" />
+    <Content Include="WebFormEditarProfes.aspx" />
     <Content Include="WebFormProfes.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +101,13 @@
     <Compile Include="WebFormAlumnos.aspx.designer.cs">
       <DependentUpon>WebFormAlumnos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormEditarProfes.aspx.cs">
+      <DependentUpon>WebFormEditarProfes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEditarProfes.aspx.designer.cs">
+      <DependentUpon>WebFormEditarProfes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormProfes.aspx.cs">
       <DependentUpon>WebFormProfes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -112,12 +124,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LogicaNegocios\LogicaNegocios.csproj">
-      <Project>{c650cdb6-b67e-4c1e-8e4a-6e31e0bf06d1}</Project>
-      <Name>LogicaNegocios</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="imgs\" />

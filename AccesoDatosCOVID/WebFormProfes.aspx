@@ -29,7 +29,8 @@
         <div class="row">
             <div class="col-10 ">
                <h1 class="mb-3">Detalle profesor</h1>
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" class="mb-5" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:Button ID="ButtonEditar" runat="server" Text="Agregar registro" class="btn btn-success mt-3 mb-3 " OnClick="ButtonEditar_Click"/>
+                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" class="mb-5" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="226px">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
                         <asp:CommandField SelectText="Editar" ShowSelectButton="True" />
@@ -51,21 +52,25 @@
             </div><%--fin div col-2 --%>     
             <div class="row mt-mb-3">
                 <asp:Label ID="LabelMsj" runat="server" Text=""></asp:Label>
-                <div class="col-6 mt-3">
+                <div class="col-5 mt-3">
                     <h5><asp:Label ID="LabelPrueba" runat="server" Text="Añadir documento de prueba COVID"></asp:Label>
                     </h5>
                     <asp:FileUpload ID="FileUploadPrueba" runat="server" class="form-control mb-3"/>
-                    <asp:Button ID="ButtonPrueba" runat="server" Text="Subir Prueba" class="btn btn-outline-success" OnClick="ButtonPrueba_Click"/>
+                    <asp:Button ID="ButtonPrueba" runat="server" Text="Subir Prueba" class="btn btn-outline-info" OnClick="ButtonPrueba_Click"/>
                     <asp:TextBox ID="TextBoxStatus" runat="server" disabled CssClass="mt-3" Width="487px" placeholder="Status"></asp:TextBox>
-                </div><%--fin div col-6 --%>   
-                <div class="col-6 mt-3">
+                </div><%--fin div col-5 --%>   
+                <div class="col-5 mt-3">
                     <h5><asp:Label ID="LabelIncapacidad" runat="server" Text="Añadir documento de incapacidad"></asp:Label>
                     </h5>
                     <asp:FileUpload ID="FileUploadIncapacidad" runat="server" class="form-control mb-3"/>   
-                    <asp:Button ID="ButtonIncapacidad" runat="server" Text="Subir incapacidad" class="btn btn-outline-success" OnClick="ButtonIncapacidad_Click"/>
+                    <asp:Button ID="ButtonIncapacidad" runat="server" Text="Subir incapacidad" class="btn btn-outline-info" OnClick="ButtonIncapacidad_Click"/>
                     <br />
                     
-                </div><%--fin div col-6 --%>   
+                </div><%--fin div col-5 --%>   
+                <div class="col-2 mt-3">
+                    
+                    <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar registro" class="btn btn-danger" OnClick="ButtonEliminar_Click"/>
+                </div><%--fin div col-2 mt-3--%>  
                 
             </div><%--fin div row mt-mb-3 --%>    
             

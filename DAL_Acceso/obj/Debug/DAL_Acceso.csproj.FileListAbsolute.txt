@@ -6,7 +6,6 @@ C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCO
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\AccesoDatosCOVID\DAL_Acceso\obj\Debug\DAL_Acceso.pdb
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\bin\Debug\DAL_Acceso.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\bin\Debug\DAL_Acceso.pdb
-C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.csproj.AssemblyReference.cache
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.csproj.CoreCompileInputs.cache
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\DAL_Acceso\obj\Debug\DAL_Acceso.pdb

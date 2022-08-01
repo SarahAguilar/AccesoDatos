@@ -52,6 +52,7 @@ namespace AccesoDatosCOVID
 			ButtonIncapacidad.Visible = false;
 			LabelMsj.Visible = false;
 			TextBoxStatus.Visible = false;
+			ButtonEliminar.Visible = false;
 
 		}
 		public void Visibles()
@@ -67,6 +68,8 @@ namespace AccesoDatosCOVID
 			FileUploadIncapacidad.Visible = true;
 			ButtonIncapacidad.Visible = true;
 			TextBoxStatus.Visible = true;
+			ButtonEditar.Visible = true;
+			ButtonEliminar.Visible = true;
 		}
 
 		protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,6 +153,33 @@ namespace AccesoDatosCOVID
 				TextBoxStatus.Text = "Error! Es necesario seleccionar un documento.";
 			}
 			Visibles();
+		}
+
+        protected void ButtonEliminar_Click(object sender, EventArgs e)
+        {
+			idDetalle = GridView1.SelectedRow.Cells[1].Text;
+			string resp = "";
+			Boolean recibe = false;
+			Boolean recibe2 = false;
+			recibe = bl.BorrarSeguimientoPro(idDetalle);
+			recibe2 = bl.BorrarPositivoProfe(idDetalle);
+
+			if (recibe && recibe2)
+			{
+				TextBoxStatus.Text = "Se elimino exitosamente";
+				Response.Redirect("WebFormProfes.aspx"); //Redireccionamos
+			}
+			else
+			{
+				TextBoxStatus.Text = "ERROR! No se pudo eliminar";
+			}
+			Visibles();
+			
+		}
+
+        protected void ButtonEditar_Click(object sender, EventArgs e)
+        {
+			Response.Redirect("WebFormEditarProfes.aspx"); //Redireccionamos
 		}
     }
 }
