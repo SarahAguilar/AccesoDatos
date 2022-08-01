@@ -113,13 +113,11 @@ C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\Acceso
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\roslyn\vbc.rsp
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\roslyn\VBCSCompiler.exe
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\LogicaNegocios.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\DAL_Acceso.dll
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\LogicaNegocios.pdb
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\DAL_Acceso.pdb
-C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\obj\Debug\WebPresentacion.csproj.AssemblyReference.cache
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\obj\Debug\WebPresentacion.csproj.CoreCompileInputs.cache
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\obj\Debug\WebPresentacion.csproj.CopyComplete
 C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\obj\Debug\AccesoDatosCOVID.dll
@@ -187,3 +185,4 @@ C:\Users\pc\Desktop\Pro2\AccesoDatos\AccesoDatosCOVID\obj\Debug\WebPresentacion.
 C:\Users\pc\Desktop\Pro2\AccesoDatos\AccesoDatosCOVID\obj\Debug\WebPresentacion.csproj.CopyComplete
 C:\Users\pc\Desktop\Pro2\AccesoDatos\AccesoDatosCOVID\obj\Debug\AccesoDatosCOVID.dll
 C:\Users\pc\Desktop\Pro2\AccesoDatos\AccesoDatosCOVID\obj\Debug\AccesoDatosCOVID.pdb
+C:\Users\Sarah Aguilar\Documents\9noCuatri\Desarrollo Web Integral\covid2\AccesoDatos\AccesoDatosCOVID\bin\LogicaNegocios.dll

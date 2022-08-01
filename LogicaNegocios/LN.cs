@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL_Acceso;
+using LogicaNegocios.Entidades;
 
 namespace LogicaNegocios
 {
@@ -25,8 +26,8 @@ namespace LogicaNegocios
             acceso.AbrirConexion(ref msj);
             return msj;
         }
-        
-        public DataTable VerProfesor( ref string msj)
+
+        public DataTable VerProfesor(ref string msj)
         {
             string query = "SELECT * FROM Profesor;";
             DataTable salida = null;
@@ -147,7 +148,7 @@ namespace LogicaNegocios
             }
             return salida;
         }
-        
+
         public DataTable SelectProgEdu2(ref string msj)
         {
             string query = "SELECT * FROM ProgramaEducativo;";//consulta en la tabla programa educativo
@@ -210,5 +211,302 @@ namespace LogicaNegocios
             return salida;
         }
 
+        public List<Profesores> SelectProfesor(ref string msj)
+        {
+            string query = "SELECT * FROM Profesor;";//consulta en la tabla cuatrimestre
+
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = acceso.ConsultarReader(query, acceso.AbrirConexion(ref msj), ref msj);
+
+            List<Profesores> listSalida = new List<Profesores>();
+
+            if (atrapaDatos != null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    listSalida.Add(new Entidades.Profesores
+                    {
+                        ID_Profe = (int)atrapaDatos[0],
+                        Nombre = (string)atrapaDatos[2]
+                    });
+                }
+
+            }
+            else
+            {
+                listSalida = null;
+            }
+
+            return listSalida;
+        }
+        public List<Medico> SelectMedico(ref string msj)
+        {
+            string query = "SELECT * FROM Medico;";//consulta en la tabla cuatrimestre
+            SqlDataReader atrapaDatos = null;
+
+            atrapaDatos = acceso.ConsultarReader(query, acceso.AbrirConexion(ref msj), ref msj);
+
+            List<Medico> listSalida = new List<Medico>();
+
+            if (atrapaDatos != null)
+            {
+                while (atrapaDatos.Read())
+                {
+                    listSalida.Add(new Medico
+                    {
+                        ID_Dr = (int)atrapaDatos[0],
+                        Nombre = (string)atrapaDatos[1]
+                    });
+                }
+
+            }
+            else
+            {
+                listSalida = null;
+            }
+
+            return listSalida;
+        }
+
+        public int F_PositivoProfe(ref string msj)
+        {
+            string query = "select MAX(Id_posProfe) from PositivoProfe;";//consulta en la tabla cuatrimestre
+            SqlDataReader readerData = null;
+            readerData = acceso.ConsultarReader(query, acceso.AbrirConexion(ref msj), ref msj);
+            int salida  = 0;
+
+            //Verificamos que tenga datos el DataReader
+            if (readerData != null)
+            {
+                while (readerData.Read())
+                {
+                    salida = (int)readerData[0];
+                }
+            }
+
+
+
+            return salida;
+
+        }
+
+        public Boolean InsertarProfePositivo(string fecha, string com, string ant, string ries, int cont, string ex, int Fprf, string docP, int inca, int dias, string docI)
+        {
+            Boolean salida = false;
+            string msj = "";
+            string query = "INSERT INTO PositivoProfe (FechaConfirmado, Comprobacion, Antecedentes, Riesgo, NumContaio, Extra, F_Profe, Doc_Prueba, PeriodoIncapacidad, Dias_Incapacidad, Doc_Incapacidad)" +
+                           "VALUES (@fechaC, @com, @ant, @rie, @conta, @ex, @fpro, @docP, @inca, @dias, @docI);";
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            //listaP.Add(new SqlParameter()
+            //{
+            //    ParameterName = "id",
+            //    SqlDbType = SqlDbType.Int,
+            //    Value = id
+            //});
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fechaC",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 50,
+                Value = fecha
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "com",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = com
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ant",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = ant
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "rie",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 100,
+                Value = ries
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "conta",
+                SqlDbType = SqlDbType.Int,
+                Value = cont
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ex",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 150,
+                Value = ex
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fpro",
+                SqlDbType = SqlDbType.Int,
+                Value = Fprf
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "docP",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = docP
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "inca",
+                SqlDbType = SqlDbType.Int,
+                Value = inca
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "dias",
+                SqlDbType = SqlDbType.Int,
+                Value = dias
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "docI",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = docI
+            });
+            salida = acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+            return salida;
+        }
+
+        public Boolean InsertarSeguimientoPro(int fpp, int fm, string fe, string com, string rep, string ent, string ex)
+        {
+            Boolean salida = false;
+            string msj = "";
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            string query = "INSERT INTO SeguimientoPRO (F_positivoProfe, F_medico, Fecha, Form_Comunica, Reporte, Entrevista, Extra)" +
+                           "VALUES (@fPoPrf, @fMed, @f, @com, @rep, @ent, @ex);";
+            //listaP.Add(new SqlParameter()
+            //{
+            //    ParameterName = "id",
+            //    SqlDbType = SqlDbType.Int,
+            //    Value = id
+            //});
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fPoPrf",
+                SqlDbType = SqlDbType.Int,
+                Value = fpp
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fMed",
+                SqlDbType = SqlDbType.Int,
+                Value = fm
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "f",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 50,
+                Value = fe
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "com",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 50,
+                Value = com
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "rep",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 250,
+                Value = rep
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ent",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 250,
+                Value = ent
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ex",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 150,
+                Value = ex
+            });
+            salida = acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+            return salida;
+        }
+
+        public Boolean InsertarPositivoAlumno(int id, string fecha, string comp, string ante, string ries, int cont, string ext, int fAlu)
+        {
+            Boolean salida = false;
+            string msj = "";
+            List<SqlParameter> listaP = new List<SqlParameter>();
+            string query = "INSERT INTO PositivoAlumno (ID_posAl, FechaConfirmado, Comprobacion, Antecedentes, Riesgo, NumContagio, Extra, F_Alumno)" +
+                           "VALUES (@id, @fecha, @comp, @ante, @ries, @cont, @ext, @fAlu);";
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "id",
+                SqlDbType = SqlDbType.Int,
+                Value = id
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fecha",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 50,
+                Value = fecha
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "comp",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = comp
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ante",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 200,
+                Value = ante
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ries",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 100,
+                Value = ries
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "cont",
+                SqlDbType = SqlDbType.Int,
+                Value = cont
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "ext",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 150,
+                Value = ext
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "fAlu",
+                SqlDbType = SqlDbType.Int,
+                Value = fAlu
+            });
+            salida = acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+            return salida;
+        }
     }
 }

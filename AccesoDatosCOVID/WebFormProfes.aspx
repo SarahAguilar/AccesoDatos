@@ -29,6 +29,7 @@
         <div class="row">
             <div class="col-10 ">
                <h1 class="mb-3">Detalle profesor</h1>
+                <asp:Button ID="ButtonEditar" runat="server" Text="Agregar registro" class="btn btn-success mt-3 mb-3 " OnClick="ButtonEditar_Click"/>
                 <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" class="mb-5" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="226px">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                     <Columns>
@@ -67,7 +68,7 @@
                     
                 </div><%--fin div col-5 --%>   
                 <div class="col-2 mt-3">
-                    <asp:Button ID="ButtonEditar" runat="server" Text="Editar registro" class="btn btn-success mt-3 mb-3 " OnClick="ButtonEditar_Click"/>
+                    
                     <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar registro" class="btn btn-danger" OnClick="ButtonEliminar_Click"/>
                 </div><%--fin div col-2 mt-3--%>  
                 

@@ -43,20 +43,12 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
+                <br />
+                
             </div> <%--fin div col-10 --%>
-            <br />
-            <div class="col-2 ">
-                <asp:Button ID="ButtonEditar" runat="server" Text="Editar" class="btn btn-success"/>
-                &nbsp;
-                <asp:Button ID="ButtonEliminar" runat="server" Text="Eliminar" class="btn btn-danger"/>
-            </div><%--fin div col-2 --%>       
+            <br />    
         </div> <%--fin div row --%>
-        <div class="row mt-3">
-            <div class="col-2">
-            </div>
-            <div class="col-2">
-            </div>
-        </div>
+
         <%--fin del form con container--%>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         

@@ -24,24 +24,6 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// Control TextBoxIdPositivoProfe.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdPositivoProfe;
-
-        /// <summary>
         /// Control Label2.
         /// </summary>
         /// <remarks>
@@ -141,13 +123,13 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control TextBoxF_Profe.
+        /// Control DropDownList1IdProfesor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxF_Profe;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1IdProfesor;
 
         /// <summary>
         /// Control Label9.
@@ -159,13 +141,13 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control TextBoxDoc_Prueba.
+        /// Control FileUploadPrueba.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDoc_Prueba;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadPrueba;
 
         /// <summary>
         /// Control Label10.
@@ -213,13 +195,13 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// Control TextBoxDoc_Incapacidad.
+        /// Control FileUploadPruebaI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxDoc_Incapacidad;
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadPruebaI;
 
         /// <summary>
         /// Control Label7.
@@ -240,42 +222,6 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.WebControls.TextBox TextBoxExtra;
 
         /// <summary>
-        /// Control Label13.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
-
-        /// <summary>
-        /// Control TextBoxIdSegui.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdSegui;
-
-        /// <summary>
-        /// Control Label14.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
-
-        /// <summary>
-        /// Control TextBoxF_PosiProfe.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxF_PosiProfe;
-
-        /// <summary>
         /// Control Label15.
         /// </summary>
         /// <remarks>
@@ -285,13 +231,13 @@ namespace AccesoDatosCOVID
         protected global::System.Web.UI.WebControls.Label Label15;
 
         /// <summary>
-        /// Control TextBoxIdMedico.
+        /// Control DropDownListMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIdMedico;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListMedico;
 
         /// <summary>
         /// Control Label16.
@@ -382,6 +328,15 @@ namespace AccesoDatosCOVID
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxExtraSegui;
+
+        /// <summary>
+        /// Control TextBoxStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxStatus;
 
         /// <summary>
         /// Control ButtonAgregar.

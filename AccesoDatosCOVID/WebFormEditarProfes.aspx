@@ -25,16 +25,10 @@
       </div>
     </nav> <%--Fin del navbar--%>
     <form id="form1" runat="server" class="container mt-3 mb-3">
-        <h1 class="mb-3">Editar profesor</h1>
-        <div class="row">
-            <div class="col-6">
-                <div class="mb-3 row">
-                <asp:Label ID="Label1" runat="server" Text="Id positivo profe:" class="col-sm-3 col-form-label"></asp:Label>
-                <div class="col-sm-9">
-                    <asp:TextBox ID="TextBoxIdPositivoProfe" runat="server" class="form-control"></asp:TextBox>
-                </div>
-            </div>
+        <h1 class="mb-3">Agregar profesor</h1>
 
+        <div class="row">
+        <div class="col-6">
             <div class="mb-3 row">
                 <asp:Label ID="Label2" runat="server" Text="Fecha de confirmación:" class="col-sm-3 col-form-label"></asp:Label>
                 <div class="col-sm-9">
@@ -73,14 +67,15 @@
             <div class="mb-3 row">
                 <asp:Label ID="Label8" runat="server" Text="Id del profesor:" class="col-sm-3 col-form-label"></asp:Label>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="TextBoxF_Profe" runat="server" class="form-control"></asp:TextBox>
-                </div>
+                    <asp:DropDownList ID="DropDownList1IdProfesor" runat="server" class="form-control" OnSelectedIndexChanged="DropDownList1IdProfesor_SelectedIndexChanged">
+                    </asp:DropDownList>
+                 </div>
             </div>
 
             <div class="mb-3 row">
                 <asp:Label ID="Label9" runat="server" Text="Documento de prueba:" class="col-sm-3 col-form-label"></asp:Label>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="TextBoxDoc_Prueba" runat="server" class="form-control"></asp:TextBox>
+                    <asp:FileUpload ID="FileUploadPrueba" runat="server" class="form-control mb-3"/>
                 </div>
             </div>
 
@@ -101,7 +96,7 @@
             <div class="mb-3 row">
                 <asp:Label ID="Label12" runat="server" Text="Documento incapacidad:" class="col-sm-3 col-form-label"></asp:Label>
                 <div class="col-sm-9">
-                    <asp:TextBox ID="TextBoxDoc_Incapacidad" runat="server" class="form-control"></asp:TextBox>
+                    <asp:FileUpload ID="FileUploadPruebaI" runat="server" class="form-control mb-3"/>
                 </div>
             </div>
 
@@ -116,21 +111,10 @@
 
             <div class="col-6">
                 <div class="mb-3 row">
-                    <asp:Label ID="Label13" runat="server" Text="Id seguimiento:" class="col-sm-3 col-form-label"></asp:Label>
-                    <div class="col-sm-9">
-                        <asp:TextBox ID="TextBoxIdSegui" runat="server" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="mb-3 row">
-                    <asp:Label ID="Label14" runat="server" Text="Id positifo profe:" class="col-sm-3 col-form-label"></asp:Label>
-                    <div class="col-sm-9">
-                        <asp:TextBox ID="TextBoxF_PosiProfe" runat="server" class="form-control"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="mb-3 row">
                     <asp:Label ID="Label15" runat="server" Text="Id medico:" class="col-sm-3 col-form-label"></asp:Label>
                     <div class="col-sm-9">
-                        <asp:TextBox ID="TextBoxIdMedico" runat="server" class="form-control"></asp:TextBox>
+                        <asp:DropDownList ID="DropDownListMedico" runat="server" class="form-control" OnSelectedIndexChanged="DropDownListMedico_SelectedIndexChanged">
+                    </asp:DropDownList>
                     </div>
                 </div>
                 <div class="mb-3 row">
@@ -169,7 +153,9 @@
             <div class="col-2">
             </div>
             <div class="col-8">
-                <asp:Button ID="ButtonAgregar" runat="server" Text="E D I T A R" class="btn btn-success col-sm-12" OnClick="ButtonAgregar_Click"/>
+                <asp:TextBox ID="TextBoxStatus" runat="server" disabled class="col-sm-12 mb-3"></asp:TextBox>
+                <asp:Button ID="ButtonAgregar" runat="server" Text="A G R E G A R" class="btn btn-success col-sm-12" OnClick="ButtonAgregar_Click"/>
+
             </div>
             <div class="col-2">
             </div>

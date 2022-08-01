@@ -52,7 +52,6 @@ namespace AccesoDatosCOVID
 			ButtonIncapacidad.Visible = false;
 			LabelMsj.Visible = false;
 			TextBoxStatus.Visible = false;
-			ButtonEditar.Visible = false;
 			ButtonEliminar.Visible = false;
 
 		}
