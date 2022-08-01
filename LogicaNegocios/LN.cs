@@ -174,5 +174,71 @@ namespace LogicaNegocios
             }
             return salida;
         }
+
+        //Consulta Profesor 
+        public DataTable ConsultaPro(ref string msj, ref string idPE, ref string idCU)
+        {
+            
+            string query = "SELECT P.ID_Profe, Nombre, Ap_pat, Ap_Mat, PE.ProgramaEd, C.Periodo " +
+                "From Profesor P, PositivoProfe PP, ProfeGRupo PG, GrupoCuatrimestre GC, ProgramaEducativo PE, Cuatrimestre C " +
+                "WHERE PP.F_Profe = P.id_Profe AND P.id_Profe = PG.F_Profe AND PG.F_GruCuat = GC.id_GruCuat AND GC.F_ProgEd = PE.id_pe AND GC.F_Cuatri = C.id_Cuatrimestre; " ; 
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaPro = new List<SqlParameter>();
+            listaPro.Add(new SqlParameter()
+            {
+                ParameterName = "idPe",
+                SqlDbType = SqlDbType.VarChar,
+                Value = idPE,
+            });
+            listaPro.Add(new SqlParameter()
+            {
+                ParameterName = "idCua",
+                SqlDbType = SqlDbType.VarChar,
+                Value = idCU,
+            });
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaPro);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
+
+        //Consulta Alumno 
+        public DataTable ConsultaAl(ref string msj, ref string idPE, ref string idCU, ref string idGR)
+        {
+
+            string query = "SELECT A.ID_Alumno, Matricula, Nombre, Ap_pat, Ap_Mat, PE.ProgramaEd, C.Periodo, G.Grado " +
+                "From Alumno A, AlumnoGrupo AG, GrupoCuatrimestre GC,ProgramaEducativo PE, Cuatrimestre C, Grupo G " +
+                "WHERE A.ID_Alumno = AG.F_Alumn AND GC.Id_GruCuat = AG.F_GruCuat AND GC.F_Cuatri = C.id_Cuatrimestre AND GC.F_ProgEd = PE.Id_pe AND GC.F_Grupo = G.Id_grupo; ";
+            DataTable salida = null;
+            DataSet ds = null;
+            List<SqlParameter> listaPro = new List<SqlParameter>();
+            listaPro.Add(new SqlParameter()
+            {
+                ParameterName = "idPe",
+                Value = idPE,
+                
+            });
+            listaPro.Add(new SqlParameter()
+            {
+                ParameterName = "idCua",
+                SqlDbType = SqlDbType.VarChar,
+                Value = idCU,
+            });
+            listaPro.Add(new SqlParameter()
+            {
+                ParameterName = "idGru",
+                SqlDbType = SqlDbType.VarChar,
+                Value = idGR,
+            });
+            ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaPro);
+            if (ds != null) //Si el DataSet no esta vacio
+            {
+                salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+            }
+            return salida;
+        }
     }
 }

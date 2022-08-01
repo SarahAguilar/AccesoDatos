@@ -34,7 +34,15 @@ namespace AccesoDatosCOVID
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+
+            string msj = "";
+            string id1="";
+            string id2 = "";
+            id1 = DropDownList1.SelectedItem.Value;
+            id2 = DropDownList2.SelectedItem.Value;
+
+            GridView1.DataSource = bl.ConsultaPro(ref msj, ref id1, ref id2);
+            GridView1.DataBind();
         }
 
         public void mostrarProfs()
@@ -70,6 +78,11 @@ namespace AccesoDatosCOVID
         {
             Session["ID_Profe"] = GridView1.SelectedRow.Cells[1].Text; //Se guarda el id del profe en una variable de sesion
             Response.Redirect("WebFormProfes.aspx"); //Redireccionamos
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           ;
         }
     }
 }

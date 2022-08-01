@@ -109,12 +109,12 @@ namespace DAL_Acceso
                 {
                     carrito.ExecuteNonQuery(); //Realiza cambios de la base
                     salida = true;
-                   // msj = "Modificación correcta";
+                    // msj = "Modificación correcta";
                 }
                 catch (Exception e)
                 {
                     salida = false;
-                   // msj = "Error" + e.Message;
+                    // msj = "Error" + e.Message;
                 }
             }
             else
@@ -123,6 +123,9 @@ namespace DAL_Acceso
             }
             return salida;
         }
+
+    
+
 
     }
 }

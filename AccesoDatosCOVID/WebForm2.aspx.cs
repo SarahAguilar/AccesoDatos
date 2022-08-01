@@ -34,7 +34,16 @@ namespace AccesoDatosCOVID
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            string msj = "";
+            string id1 = "";
+            string id2 = "";
+            string id3 = "";
+            id1 = DropDownList1.SelectedItem.Value;
+            id2 = DropDownList2.SelectedItem.Value;
+            id3 = DropDownList2.SelectedItem.Value;
 
+            GridView1.DataSource = bl.ConsultaAl(ref msj, ref id1, ref id2, ref id3);
+            GridView1.DataBind(); ;
         }
 
         public void mostrarAlum()

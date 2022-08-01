@@ -47,7 +47,7 @@
                <br /><br />
                 Programa educativo:
                 <br />
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                 </asp:DropDownList>
                 <br />
                 Cuatrimestre:<br />
