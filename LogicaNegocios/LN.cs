@@ -41,7 +41,21 @@ namespace LogicaNegocios
             return salida;
         }
 
-        public DataTable VerAlumnos(ref string msj)
+            public DataTable VerProfesor2(string id , ref string msj)
+            {
+                string query = "SELECT * FROM Profesor where ID_Profe = " + id;
+                DataTable salida = null;
+                DataSet ds = null;
+                List<SqlParameter> listaP = new List<SqlParameter>();
+                ds = acceso.ConsultaDS(query, acceso.AbrirConexion(ref msj), ref msj, listaP);
+                if (ds != null) //Si el DataSet no esta vacio
+                {
+                    salida = ds.Tables[0]; //Obtiene las tablas del DataSet
+                }
+                return salida;
+            }
+
+            public DataTable VerAlumnos(ref string msj)
         {
             string query = "SELECT * FROM Alumno;";
             DataTable salida = null;
@@ -574,5 +588,77 @@ namespace LogicaNegocios
             }
             return salida;
         }
+
+        public void ModificarProfe(string id, int RegEm, string Nom, string Ap, string Am, string Gene, string Cate, string Corre, string Celu)
+        {
+            string query = "UPDATE Profesor SET RegistroEmpleado = @RegEm, Nombre = @Nom, Ap_pat = @Ap, Ap_Mat = @Am, " +
+                "Genero = @Gene, Categoria = @Cate, Correo = @Corre, Celular = @Celu where ID_Profe = @id";
+            string msj = "";
+            List<SqlParameter> listaP = new List<SqlParameter>();
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "RegEm",
+                SqlDbType = SqlDbType.VarChar,
+                Value = RegEm,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Nom",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Nom,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Ap",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Ap,
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Am",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Am,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Gene",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Gene,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Cate",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Cate,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Corre",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Corre,
+            });
+
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "Celu",
+                SqlDbType = SqlDbType.VarChar,
+                Value = Celu,
+            });
+            listaP.Add(new SqlParameter()
+            {
+                ParameterName = "id",
+                SqlDbType = SqlDbType.Int,
+                Value = id,
+            });
+            acceso.Modificar(acceso.AbrirConexion(ref msj), query, ref msj, listaP);
+        }
+
+
     }
 }

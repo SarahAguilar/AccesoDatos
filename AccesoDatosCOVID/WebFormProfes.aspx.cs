@@ -30,9 +30,14 @@ namespace AccesoDatosCOVID
 			}
 			mostrarSeleccion();
 			NoVisibles();
-
+			mostrarProfs2();
 		}
-
+		public void mostrarProfs2()
+		{
+			string msj = "";
+			GridViewUnProfe.DataSource = bl.VerProfesor2(idProfe, ref msj);
+			GridViewUnProfe.DataBind();
+		}
 		public void mostrarSeleccion()
 		{
 			string msj = "";
@@ -181,5 +186,16 @@ namespace AccesoDatosCOVID
         {
 			Response.Redirect("WebFormEditarProfes.aspx"); //Redireccionamos
 		}
+
+        protected void Modificar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+       
+        protected void GridViewUnProfe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

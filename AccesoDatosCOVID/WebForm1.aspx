@@ -54,7 +54,10 @@
                 <asp:DropDownList ID="DropDownList2" runat="server">
                 </asp:DropDownList>
                 <br />
+                <br />
                  <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Mostrar profesores" class="btn btn-info"/>
+                <br />
+                <br />
             </div><%--fin div col-2 --%>            
 
         </div> <%--fin div row --%>

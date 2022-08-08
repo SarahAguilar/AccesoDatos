@@ -27,8 +27,77 @@
     </nav> <%--Fin del navbar--%>
     <form id="form1" runat="server" class ="container mt-4"> 
         <div class="row">
+            <h1 class="mb-3">Detalle profesor</h1>
+            <div class="row">
+                <div class="col-8">
+                    <asp:GridView ID="GridViewUnProfe" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridViewUnProfe_SelectedIndexChanged">
+                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                        <EditRowStyle BackColor="#999999" />
+                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    </asp:GridView>
+                    <br />
+                </div>
+                <div class="col-4">
+                    <asp:Button ID="Modificar" runat="server" Text="Editar profesor" OnClick="Modificar_Click" />
+                    <asp:Button ID="Eliminar" runat="server" Text="Eliminar profesor" />
+                    <br />
+                </div>
+            </div> <%--fin div row--%>
+            <div class="row">
+                <div class="col-4">
+                    <asp:TextBox ID="TextBoxStatus2" runat="server" disabled></asp:TextBox>
+                    <br />
+                    <br />
+        <h1 class="mb-3">Editar Profesor </h1>
+        <p class="mb-3">Registro de Empleado </p>
+        <p class="mb-3">
+            <asp:TextBox ID="txtRE" runat="server" Width="163px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Nombre </p>
+        <p class="mb-3">
+            <asp:TextBox ID="txtNom" runat="server" Width="160px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Apellido Paterno </p>
+        <p class="mb-3">
+            <asp:TextBox ID="ApellidoPa" runat="server" Width="159px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Apellido Materno </p>
+        <p class="mb-3">
+            <asp:TextBox ID="ApellidoMa" runat="server" Width="164px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Genero </p>
+        <p class="mb-3">
+            <asp:TextBox ID="Genero" runat="server" Width="162px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Categoria </p>
+        <p class="mb-3">
+            <asp:TextBox ID="Categoria" runat="server" Width="166px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Correo </p>
+        <p class="mb-3">
+            <asp:TextBox ID="Correo" runat="server" Width="238px"></asp:TextBox>
+        </p>
+        <p class="mb-3">Celular </p>
+        <p class="mb-3">
+            <asp:TextBox ID="Celular" runat="server" Width="177px"></asp:TextBox>
+        </p>
+                </div>
+                <div class="col-4">
+                    
+                </div>
+                <div class="col-4">
+                    
+                </div>
+            </div>
             <div class="col-10 ">
-               <h1 class="mb-3">Detalle profesor</h1>
                 <asp:Button ID="ButtonEditar" runat="server" Text="Agregar registro" class="btn btn-success mt-3 mb-3 " OnClick="ButtonEditar_Click"/>
                 <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" class="mb-5" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="226px">
                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
@@ -74,8 +143,7 @@
                 
             </div><%--fin div row mt-mb-3 --%>    
             
-        </div> <%--fin div row --%>
-        <%--fin del form con container--%>
+        </div> <%--fin div row --%>        <%--fin del form con container--%>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         
     </form>

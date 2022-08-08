@@ -26,6 +26,11 @@
     </nav> <%--Fin del navbar--%>
     <form id="form1" runat="server" class="container mt-3 mb-3">
         <h1 class="mb-3">Agregar profesor</h1>
+        <p class="mb-3">&nbsp;</p>
+        <p class="mb-3">
+            &nbsp;</p>
+        <p class="mb-3">Agregar Profesor </p>
+        <p class="mb-3">&nbsp;</p>
 
         <div class="row">
         <div class="col-6">
